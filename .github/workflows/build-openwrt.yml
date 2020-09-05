@@ -21,9 +21,10 @@ on:
       - '.config'
 #  schedule:
 #    - cron: 0 8 * * 5
-  watch:
-    types: started
-
+#   watch:
+#     types: started
+  workflow_dispatch:
+    repository_dispatch:
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
