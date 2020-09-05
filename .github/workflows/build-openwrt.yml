@@ -22,7 +22,7 @@ on:
 #  schedule:
 #    - cron: 0 8 * * 5
   watch:
-    types: [started]
+    types: started
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
@@ -36,7 +36,7 @@ env:
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
   UPLOAD_WETRANSFER: false
-  TZ: Asia/Beijing
+  TZ: Asia/Shanghai
 
 jobs:
   build:
