@@ -11,6 +11,7 @@
 name: newifi3_OpenWrt
 
 on:
+  workflow_dispatch:
   repository_dispatch:
   release:
     types: published
@@ -23,7 +24,7 @@ on:
 #    - cron: 0 8 * * 5
 #   watch:
 #     types: started
-  workflow_dispatch:
+
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
