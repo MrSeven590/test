@@ -12,6 +12,14 @@ name: newifi3_OpenWrt
 
 on:
   workflow_dispatch:
+    inputs:
+      name:
+        description: 'Person to greet'
+        required: true
+        default: 'Mona the Octocat'
+      home:
+        description: 'location'
+        required: false
   repository_dispatch:
   release:
     types: published
@@ -41,6 +49,12 @@ env:
   TZ: Asia/Shanghai
 
 jobs:
+  say_hello:
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+        echo "Hello ${{ github.event.inputs.name }}!"
+        echo "- in ${{ github.event.inputs.home }}!"
   build:
     runs-on: ubuntu-18.04
     if: github.event.repository.owner.id == github.event.sender.id
